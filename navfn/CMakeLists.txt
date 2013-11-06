@@ -49,15 +49,15 @@ catkin_package(
         pluginlib
 )
 
-#add_library (navfn src/navfn.cpp src/navfn_ros.cpp)
-#target_link_libraries(navfn
-#    ${catkin_LIBRARIES}
-#    )
+add_library (navfn src/navfn.cpp src/navfn_ros.cpp)
+target_link_libraries(navfn
+    ${catkin_LIBRARIES}
+    )
 
-#add_executable(navfn_node src/navfn_node.cpp)
-#target_link_libraries(navfn_node
-#    navfn
-#    )
+add_executable(navfn_node src/navfn_node.cpp)
+target_link_libraries(navfn_node
+    navfn
+    )
 
 install(TARGETS navfn navfn_node
        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}

@@ -31,12 +31,12 @@ catkin_package(
         nav_core
 )
 
-#add_library(${PROJECT_NAME} src/move_slow_and_clear.cpp)
-#add_dependencies(${PROJECT_NAME} geometry_msgs_gencpp)
-#target_link_libraries(${PROJECT_NAME}
-#    ${Boost_LIBRARIES}
-#    ${catkin_LIBRARIES}
-#    )
+add_library(${PROJECT_NAME} src/move_slow_and_clear.cpp)
+add_dependencies(${PROJECT_NAME} geometry_msgs_gencpp)
+target_link_libraries(${PROJECT_NAME}
+    ${Boost_LIBRARIES}
+    ${catkin_LIBRARIES}
+    )
 
 ## Install project namespaced headers
 install(DIRECTORY include/${PROJECT_NAME}/
