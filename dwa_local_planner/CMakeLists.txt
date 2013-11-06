@@ -9,18 +9,15 @@ find_package(catkin REQUIRED
             nav_core
             nav_msgs
             pluginlib
-            pcl_conversions
             roscpp
             tf
         )
 
 find_package(Eigen REQUIRED)
-find_package(PCL REQUIRED)
 include_directories(
     include
     ${catkin_INCLUDE_DIRS}
     ${EIGEN_INCLUDE_DIRS}
-    ${PCL_INCLUDE_DIRS}
     )
 add_definitions(${EIGEN_DEFINITIONS})
 
@@ -40,10 +37,10 @@ catkin_package(
         roscpp
 )
 
-add_library(dwa_local_planner src/dwa_planner.cpp src/dwa_planner_ros.cpp)
-target_link_libraries(dwa_local_planner base_local_planner ${catkin_LIBRARIES})
-add_dependencies(dwa_local_planner dwa_local_planner_gencfg)
-add_dependencies(dwa_local_planner nav_msgs_gencpp)
+#add_library(dwa_local_planner src/dwa_planner.cpp src/dwa_planner_ros.cpp)
+#target_link_libraries(dwa_local_planner base_local_planner ${catkin_LIBRARIES})
+#add_dependencies(dwa_local_planner dwa_local_planner_gencfg)
+#add_dependencies(dwa_local_planner nav_msgs_gencpp)
 
 install(TARGETS dwa_local_planner
        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
