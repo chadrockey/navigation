@@ -13,14 +13,12 @@ find_package(catkin REQUIRED
 
 
 find_package(Eigen REQUIRED)
-find_package(PCL REQUIRED)
 find_package(Boost REQUIRED COMPONENTS thread)
 include_directories(
     include
     ${catkin_INCLUDE_DIRS}
     SYSTEM
         ${EIGEN_INCLUDE_DIRS}
-        ${PCL_INCLUDE_DIRS}
 )
 add_definitions(${EIGEN_DEFINITIONS})
 
@@ -33,12 +31,12 @@ catkin_package(
         nav_core
 )
 
-add_library(${PROJECT_NAME} src/move_slow_and_clear.cpp)
-add_dependencies(${PROJECT_NAME} geometry_msgs_gencpp)
-target_link_libraries(${PROJECT_NAME}
-    ${Boost_LIBRARIES}
-    ${catkin_LIBRARIES}
-    )
+#add_library(${PROJECT_NAME} src/move_slow_and_clear.cpp)
+#add_dependencies(${PROJECT_NAME} geometry_msgs_gencpp)
+#target_link_libraries(${PROJECT_NAME}
+#    ${Boost_LIBRARIES}
+#    ${catkin_LIBRARIES}
+#    )
 
 ## Install project namespaced headers
 install(DIRECTORY include/${PROJECT_NAME}/
@@ -48,6 +46,7 @@ install(DIRECTORY include/${PROJECT_NAME}/
 
 install(TARGETS move_slow_and_clear
        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+       ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
        )
 
 install(FILES recovery_plugin.xml

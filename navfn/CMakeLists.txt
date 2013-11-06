@@ -7,8 +7,6 @@ find_package(catkin REQUIRED
         geometry_msgs
         nav_core
         nav_msgs
-        pcl_conversions
-        pcl_ros
         pluginlib
         roscpp
         tf
@@ -16,13 +14,11 @@ find_package(catkin REQUIRED
         )
 
 find_package(Eigen REQUIRED)
-find_package(PCL REQUIRED)
 include_directories(
     include
     ${catkin_INCLUDE_DIRS}
     SYSTEM
     ${EIGEN_INCLUDE_DIRS}
-    ${PCL_INCLUDE_DIRS}
 )
 add_definitions(${EIGEN_DEFINITIONS})
 
@@ -53,19 +49,20 @@ catkin_package(
         pluginlib
 )
 
-add_library (navfn src/navfn.cpp src/navfn_ros.cpp)
-target_link_libraries(navfn
-    ${catkin_LIBRARIES}
-    )
+#add_library (navfn src/navfn.cpp src/navfn_ros.cpp)
+#target_link_libraries(navfn
+#    ${catkin_LIBRARIES}
+#    )
 
-add_executable(navfn_node src/navfn_node.cpp)
-target_link_libraries(navfn_node
-    navfn
-    )
+#add_executable(navfn_node src/navfn_node.cpp)
+#target_link_libraries(navfn_node
+#    navfn
+#    )
 
 install(TARGETS navfn navfn_node
        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+       ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
        )
 
 install(DIRECTORY include/
