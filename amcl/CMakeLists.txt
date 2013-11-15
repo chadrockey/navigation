@@ -21,7 +21,7 @@ catkin_package(
         dynamic_reconfigure
         tf
   INCLUDE_DIRS include
-  LIBRARIES amcl_sensors amcl_map amcl_pf
+  LIBRARIES amcl_node amcl_sensors amcl_map amcl_pf
 )
 
 include_directories(include/amcl include/amcl/map include/amcl/sensors include/amcl/pf)
