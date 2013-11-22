@@ -45,7 +45,12 @@
 #include <costmap_2d/footprint.h>
 #include <geometry_msgs/Polygon.h>
 #include <dynamic_reconfigure/server.h>
-#include <pluginlib/class_loader.h>
+
+#include <costmap_2d/footprint_layer.h>
+#include <costmap_2d/inflation_layer.h>
+#include <costmap_2d/obstacle_layer.h>
+#include <costmap_2d/static_layer.h>
+#include <costmap_2d/voxel_layer.h>
 
 class SuperValue : public XmlRpc::XmlRpcValue
 {
@@ -278,7 +283,6 @@ private:
   ros::Timer timer_;
   ros::Time last_publish_;
   ros::Duration publish_cycle;
-  pluginlib::ClassLoader<Layer> plugin_loader_;
   tf::Stamped<tf::Pose> old_pose_;
   Costmap2DPublisher* publisher_;
   dynamic_reconfigure::Server<costmap_2d::Costmap2DConfig> *dsrv_;

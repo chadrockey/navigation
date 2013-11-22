@@ -92,6 +92,12 @@ add_library(costmap_2d
   src/costmap_2d_publisher.cpp
   src/costmap_math.cpp
   src/footprint.cpp
+  plugins/footprint_layer.cpp
+  plugins/inflation_layer.cpp
+  plugins/obstacle_layer.cpp
+  plugins/static_layer.cpp
+  plugins/voxel_layer.cpp
+  src/observation_buffer.cpp
 )
 add_dependencies(costmap_2d geometry_msgs_gencpp)
 target_link_libraries(costmap_2d
