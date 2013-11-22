@@ -12,7 +12,6 @@ find_package(catkin REQUIRED
             nav_msgs
             pcl_conversions
             pcl_ros
-            pluginlib
             roscpp
             sensor_msgs
             std_msgs
@@ -70,7 +69,6 @@ catkin_package(
         message_runtime
         nav_msgs
         pcl_ros
-        pluginlib
         roscpp
         sensor_msgs
         std_msgs
