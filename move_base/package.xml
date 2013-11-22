@@ -33,6 +33,7 @@
     <!--These deps aren't strictly needed, but given the default parameters require them to work, we'll enforce that they build -->
     <build_depend>base_local_planner</build_depend>
     <build_depend>clear_costmap_recovery</build_depend>
+    <build_depend>dwa_local_planner</build_depend>
     <build_depend>navfn</build_depend>
     <build_depend>rotate_recovery</build_depend>
     <run_depend>base_local_planner</run_depend>
@@ -44,6 +45,7 @@
 
     <run_depend>actionlib</run_depend>
     <run_depend>costmap_2d</run_depend>
+    <run_depend>dwa_local_planner</run_depend>
     <run_depend>dynamic_reconfigure</run_depend>
     <run_depend>geometry_msgs</run_depend>
     <run_depend>message_runtime</run_depend>

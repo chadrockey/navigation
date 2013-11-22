@@ -56,6 +56,10 @@
 #include <pluginlib/class_loader.h>
 #include <std_srvs/Empty.h>
 
+#include <navfn/navfn_ros.h>
+#include <dwa_local_planner/dwa_planner_ros.h>
+#include <clear_costmap_recovery/clear_costmap_recovery.h>
+
 #include <dynamic_reconfigure/server.h>
 #include "move_base/MoveBaseConfig.h"
 
@@ -196,9 +200,6 @@ namespace move_base {
 
       ros::Time last_valid_plan_, last_valid_control_, last_oscillation_reset_;
       geometry_msgs::PoseStamped oscillation_pose_;
-      pluginlib::ClassLoader<nav_core::BaseGlobalPlanner> bgp_loader_;
-      pluginlib::ClassLoader<nav_core::BaseLocalPlanner> blp_loader_;
-      pluginlib::ClassLoader<nav_core::RecoveryBehavior> recovery_loader_;
 
       //set up plan triple buffer
       std::vector<geometry_msgs::PoseStamped>* planner_plan_;
