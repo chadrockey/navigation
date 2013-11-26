@@ -57,6 +57,7 @@
 #include <std_srvs/Empty.h>
 
 #include <navfn/navfn_ros.h>
+#include <base_local_planner/trajectory_planner_ros.h>
 #include <dwa_local_planner/dwa_planner_ros.h>
 #include <clear_costmap_recovery/clear_costmap_recovery.h>
 

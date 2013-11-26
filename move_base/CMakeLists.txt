@@ -23,6 +23,8 @@ generate_dynamic_reconfigure_options(
 )
 
 catkin_package(
+    INCLUDE_DIRS include
+    LIBRARIES move_base
     CATKIN_DEPENDS
         roscpp
         dynamic_reconfigure

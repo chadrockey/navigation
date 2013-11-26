@@ -119,7 +119,8 @@ namespace move_base {
     //create a local planner
 
     //check if a non fully qualified name has potentially been passed in
-    tc_.reset(new dwa_local_planner::DWAPlannerROS());
+    ROS_INFO("Loading base_local_planner:: TrajectoryPlannerROS");
+    tc_.reset(new base_local_planner::TrajectoryPlannerROS());
     ROS_INFO("Created local_planner %s", "dwa_local_planner");
     tc_->initialize(std::string("TrajectoryPlannerROS"), &tf_, controller_costmap_ros_);
 
@@ -226,13 +227,13 @@ namespace move_base {
       resetState();
         
       ROS_INFO("Loading local planner: %s", config.base_local_planner.c_str());
-      tc_.reset(new dwa_local_planner::DWAPlannerROS());
+      tc_.reset(new base_local_planner::TrajectoryPlannerROS());
       // Clean up before initializing the new planner
       planner_plan_->clear();
       latest_plan_->clear();
       controller_plan_->clear();
       resetState();
-      tc_->initialize(std::string("dwa_local_planner"), &tf_, controller_costmap_ros_);
+      tc_->initialize(std::string("TrajectoryPlannerROS"), &tf_, controller_costmap_ros_);
     }
 
     last_config_ = config;
