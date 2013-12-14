@@ -13,6 +13,7 @@ find_package(catkin REQUIRED
         navfn
         dwa_local_planner
         clear_costmap_recovery
+        base_local_planner
 )
 find_package(Eigen REQUIRED)
 add_definitions(${EIGEN_DEFINITIONS})
